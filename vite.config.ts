@@ -2,6 +2,7 @@
 import vue from "@vitejs/plugin-vue";
 import json from "@rollup/plugin-json";
 import path from "path";
+import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
@@ -13,6 +14,7 @@ export default defineConfig({
       ...json(),
       apply: "build",
     },
+    VitePWA({ registerType: "autoUpdate" }),
   ],
   resolve: {
     alias: {
