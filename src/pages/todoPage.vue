@@ -47,6 +47,7 @@ const items = computed(() => {
 
 watch(toggle, () => {
   locale.value === "en" ? (locale.value = "ua") : (locale.value = "en");
+  localStorage.setItem("lang", locale.value);
 });
 </script>
 
