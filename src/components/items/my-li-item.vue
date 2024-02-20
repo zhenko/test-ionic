@@ -18,15 +18,18 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
+import { IonItem, IonCheckbox } from "@ionic/vue";
+
 const props = defineProps({
   item: {
     type: Object,
   },
 });
-import { computed } from "vue";
-import { IonItem, IonCheckbox } from "@ionic/vue";
-import { useStore } from "vuex";
+
 const store = useStore();
+
 const status = computed({
   get: () => props.item.status,
   set: (value) => {

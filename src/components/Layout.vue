@@ -26,6 +26,8 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
+import { useI18n } from "vue-i18n";
 import {
   IonContent,
   IonHeader,
@@ -36,13 +38,7 @@ import {
   IonIcon,
   IonFabButton,
 } from "@ionic/vue";
-
-import { useRouter } from "vue-router";
-
 import { arrowBack } from "ionicons/icons";
-
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
 
 const props = defineProps({
   pageTitle: {
@@ -54,6 +50,8 @@ const props = defineProps({
     default: false,
   },
 });
+
+const { t } = useI18n();
 
 const router = useRouter();
 </script>

@@ -26,6 +26,10 @@
 </template>
 
 <script setup>
+import { ref, watch } from "vue";
+import { useRouter } from "vue-router";
+import { useStore } from "vuex";
+import { useI18n } from "vue-i18n";
 import {
   IonCard,
   IonCardHeader,
@@ -34,15 +38,6 @@ import {
   IonCardSubtitle,
   IonCheckbox,
 } from "@ionic/vue";
-import { ref, watch } from "vue";
-import { useRouter } from "vue-router";
-import { useStore } from "vuex";
-
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
-
-const route = useRouter();
-const store = useStore();
 
 const props = defineProps({
   pageTitle: {
@@ -50,6 +45,12 @@ const props = defineProps({
     default: "",
   },
 });
+
+const { t } = useI18n();
+
+const route = useRouter();
+
+const store = useStore();
 
 const item = ref(null);
 const status = ref(false);
@@ -78,7 +79,7 @@ watch(status, (newValue) => {
 });
 </script>
 
-<style>
+<style scoped>
 ion-card-content {
   display: flex;
   justify-content: space-between;

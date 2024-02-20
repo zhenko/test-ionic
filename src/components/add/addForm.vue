@@ -18,10 +18,7 @@
 
 <script setup>
 import { ref } from "vue";
-
 import { useI18n } from "vue-i18n";
-const { t } = useI18n();
-
 import {
   IonList,
   IonItem,
@@ -32,6 +29,8 @@ import {
 } from "@ionic/vue";
 
 const emits = defineEmits("save-item");
+
+const { t } = useI18n();
 
 const title = ref("");
 const description = ref("");
@@ -46,7 +45,7 @@ const submitFrom = () => {
 };
 </script>
 
-<style>
+<style scoped>
 .container-desktop {
   max-width: 800px;
   margin: 0 auto;

@@ -1,9 +1,7 @@
 <template>
   <layout page-title="Just do it" :show-back-button="false">
     <ion-item>
-      <ion-label style="white-space: nowrap"
-        >{{ t("Your language is") }}:
-      </ion-label>
+      <ion-label class="custom-label">{{ t("Your language is") }}: </ion-label>
       <ion-toggle
         label-placement="center"
         :enable-on-off-labels="true"
@@ -22,6 +20,9 @@
 </template>
 
 <script setup>
+import { computed, ref } from "vue";
+import { useStore } from "vuex";
+import { useI18n } from "vue-i18n";
 import {
   IonIcon,
   IonFabButton,
@@ -29,13 +30,12 @@ import {
   IonToggle,
   IonLabel,
 } from "@ionic/vue";
-import { useI18n } from "vue-i18n";
+import myUlList from "@/components/items/my-ul-list.vue";
+import { add } from "ionicons/icons";
+import { watch } from "vue";
+
 const { locale } = useI18n();
 const { t } = useI18n();
-
-import myUlList from "@/components/items/my-ul-list.vue";
-import { computed, ref } from "vue";
-import { useStore } from "vuex";
 
 const store = useStore();
 
@@ -45,15 +45,12 @@ const items = computed(() => {
   return store.state.items;
 });
 
-import { add } from "ionicons/icons";
-import { watch } from "vue";
-
 watch(toggle, () => {
   locale.value === "en" ? (locale.value = "ua") : (locale.value = "en");
 });
 </script>
 
-<style>
+<style scoped>
 ion-checkbox {
   --border-width: 40px;
   --size: 32px;
@@ -63,5 +60,9 @@ ion-checkbox {
 ion-checkbox::part(container) {
   border-radius: 6px;
   border: 2px solid #6815ec;
+}
+
+.custom-label {
+  white-space: nowrap;
 }
 </style>

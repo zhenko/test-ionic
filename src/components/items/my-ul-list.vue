@@ -11,18 +11,19 @@
 <script setup>
 import { computed } from "vue";
 import { useStore } from "vuex";
-const store = useStore();
-
 import { useI18n } from "vue-i18n";
-const { t } = useI18n();
-import myLiItem from "@/components/items/my-li-item.vue";
 import { IonList } from "@ionic/vue";
+import myLiItem from "@/components/items/my-li-item.vue";
 
 const props = defineProps({
   items: {
     type: Object,
   },
 });
+
+const store = useStore();
+
+const { t } = useI18n();
 
 const translatedItems = computed(() => {
   return store.state.items.map((item) => ({
@@ -32,5 +33,3 @@ const translatedItems = computed(() => {
   }));
 });
 </script>
-
-<style></style>

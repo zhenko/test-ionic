@@ -5,15 +5,14 @@
 </template>
 
 <script setup>
-import addForm from "@/components/add/addForm.vue";
+import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 import { useI18n } from "vue-i18n";
+import addForm from "@/components/add/addForm.vue";
+
 const { t } = useI18n();
 
-import { useStore } from "vuex";
-
 const store = useStore();
-
-import { useRouter } from "vue-router";
 
 const router = useRouter();
 
