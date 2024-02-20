@@ -1,6 +1,6 @@
 # Todo App
 
-This is a simple Todo application built using Ionic Framework and Vue 3. It allows users to create, edit, and delete tasks.
+This is a simple Todo application built using Ionic Framework and Vue 3. It allows users to create tasks.
 
 ## Features
 
