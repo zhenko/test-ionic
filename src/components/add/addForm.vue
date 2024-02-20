@@ -1,21 +1,26 @@
 <template>
-  <form @submit.prevent="submitFrom">
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating"> Title </ion-label>
-        <ion-input type="text" required v-model="title" />
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating"> Description </ion-label>
-        <ion-textarea required v-model="description" />
-      </ion-item>
-      <ion-button type="submit" expand="full">Save</ion-button>
-    </ion-list>
-  </form>
+  <div class="container-desktop">
+    <form @submit.prevent="submitFrom">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">{{ t("Title") }} </ion-label>
+          <ion-input type="text" required v-model="title" />
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> {{ t("Description") }} </ion-label>
+          <ion-textarea required v-model="description" />
+        </ion-item>
+        <ion-button type="submit" expand="full">{{ t("save") }}</ion-button>
+      </ion-list>
+    </form>
+  </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 
 import {
   IonList,
@@ -40,3 +45,10 @@ const submitFrom = () => {
   emits("save-item", enteredItem);
 };
 </script>
+
+<style>
+.container-desktop {
+  max-width: 800px;
+  margin: 0 auto;
+}
+</style>

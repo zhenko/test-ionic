@@ -1,5 +1,5 @@
 {
-  "Prepare breakfast": "Prepare breakfast",
+  "Make breakfast": "Make breakfast",
   "Create day's plan": "Create day's plan",
   "Call to brother": "Call to brother",
   "Choose a recipe: Decide what you want to make for breakfast. You can choose from options like pancakes, eggs, oatmeal, or smoothies": "Choose a recipe: Decide what you want to make for breakfast. You can choose from options like pancakes, eggs, oatmeal, or smoothies",
@@ -7,5 +7,9 @@
   "The task may involve steps such as scheduling a convenient time to call, dialing the brother's phone number, engaging in conversation, and expressing care and interest in the brother's well-being.": "The task may involve steps such as scheduling a convenient time to call, dialing the brother's phone number, engaging in conversation, and expressing care and interest in the brother's well-being.",
   "save": "Save",
   "isDone": "Done",
-  "Just do it": "Just do it"
+  "Just do it": "Just do it",
+  "Your language is": "Your language is",
+  "Add item": "Add item",
+  "Title": "Title",
+  "Description": "Description"
 }

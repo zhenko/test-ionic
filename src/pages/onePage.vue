@@ -1,23 +1,27 @@
 <template>
   <layout v-if="item" :page-title="item.name" show-back-button>
-    <ion-card>
-      <img
-        alt="Silhouette of mountains"
-        src="https://ionicframework.com/docs/img/demos/card-media.png"
-      />
-      <ion-card-header>
-        <ion-card-title color="secondary">{{ item.name }}</ion-card-title>
-        <ion-card-subtitle color="tertiary">{{ item.name }}</ion-card-subtitle>
-      </ion-card-header>
+    <div class="container-desktop">
+      <ion-card>
+        <img
+          alt="Silhouette of mountains"
+          src="https://ionicframework.com/docs/img/demos/card-media.png"
+        />
+        <ion-card-header>
+          <ion-card-title color="secondary">{{ item.name }}</ion-card-title>
+          <ion-card-subtitle color="tertiary">{{
+            item.name
+          }}</ion-card-subtitle>
+        </ion-card-header>
 
-      <ion-card-content>
-        {{ item.description }}
-      </ion-card-content>
-      <ion-card-content>
-        <div>{{ t("isDone") }}:</div>
-        <ion-checkbox label-placement="end" v-model="status"></ion-checkbox>
-      </ion-card-content>
-    </ion-card>
+        <ion-card-content>
+          {{ item.description }}
+        </ion-card-content>
+        <ion-card-content>
+          <div>{{ t("isDone") }}:</div>
+          <ion-checkbox label-placement="end" v-model="status"></ion-checkbox>
+        </ion-card-content>
+      </ion-card>
+    </div>
   </layout>
 </template>
 
@@ -78,5 +82,10 @@ watch(status, (newValue) => {
 ion-card-content {
   display: flex;
   justify-content: space-between;
+}
+
+.container-desktop {
+  max-width: 800px;
+  margin: 0 auto;
 }
 </style>

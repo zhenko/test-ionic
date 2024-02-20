@@ -38,11 +38,14 @@ const status = computed({
 <style scoped>
 .one {
   flex-basis: 30%;
+  min-width: 30%;
 }
 .two {
   flex-basis: 55%;
+  min-width: 55%;
 }
 .three {
   flex-basis: 15%;
+  min-width: 15%;
 }
 </style>

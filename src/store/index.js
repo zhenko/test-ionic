@@ -6,7 +6,7 @@ const store = createStore({
       items: [
         {
           id: 1,
-          name: "Prepare breakfast",
+          name: "Make breakfast",
           description:
             "Choose a recipe: Decide what you want to make for breakfast. You can choose from options like pancakes, eggs, oatmeal, or smoothies",
           status: true,
